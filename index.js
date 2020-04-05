@@ -67,9 +67,6 @@ app.post('/webhooks',
 
 });
 
-
-//app.get('/', (req, res) => res.send(webhookData));
-
 app.get(`/`,
     function (req, res){
         console.log('\x1b[36m%s\x1b[0m', 'GET request fired at root of page');
