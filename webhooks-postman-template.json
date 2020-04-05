@@ -1,0 +1,171 @@
+{
+  "id": "23f3b5fa-bf21-4002-b297-15e45706bff4",
+  "name": "BigCommerce API - Webhooks Tutorial",
+  "description": "Prerequisites\r\nAPI Credentials\r\nScope set to Products Modify\r\nBigCommerce Store (store_hash)\r\nNote: You can use any API client (like Postman) for this walkthrough, but these steps are written with the built-in HTTP request maker in mind.",
+  "auth": null,
+  "events": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "id": "220f11c5-8ec3-45e1-a116-60c4a638ba77",
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "id": "c91b1981-9adb-428e-a933-bdfaff5a3c56",
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ],
+  "variables": [
+    { "key": "X-Auth-Token", "value": null, "disabled": false },
+    { "key": "X-Auth-Client", "value": "", "disabled": false },
+    { "key": "store_hash", "value": "", "disabled": false }
+  ],
+  "order": [
+    "183be9e3-5203-4a1e-8316-73ef85073f4a",
+    "66ee7dd6-84e3-48af-95b8-a09b127ab70e",
+    "ce7b0c22-feb4-49ec-ac49-584190a8cc77"
+  ],
+  "folders_order": [],
+  "folders": [],
+  "requests": [
+    {
+      "id": "183be9e3-5203-4a1e-8316-73ef85073f4a",
+      "name": "Get a list of Products",
+      "url": "https://api.bigcommerce.com/stores/eicnh3gu8w/v2/hooks",
+      "description": "Returns a list of *Products*. Optional filter parameters can be passed in.",
+      "data": [],
+      "dataMode": "raw",
+      "headerData": [
+        { "key": "Accept", "value": "application/json" },
+        { "key": "Content-Type", "value": "application/json" },
+        {
+          "key": "X-Auth-Token",
+          "value": "{{X-Auth-Token}}",
+          "description": "API Token"
+        },
+        {
+          "key": "X-Auth-Client",
+          "value": "{{X-Auth-Client}}",
+          "description": "API Client ID"
+        }
+      ],
+      "method": "POST",
+      "pathVariableData": [],
+      "queryParams": [],
+      "auth": null,
+      "events": null,
+      "folder": null,
+      "currentHelper": null,
+      "helperAttributes": null,
+      "collectionId": "23f3b5fa-bf21-4002-b297-15e45706bff4",
+      "rawModeData": "{\n  \"scope\": \"store/product/updated\",\n  \"destination\": \"https://{{your-url}}.ngrok.io/webhooks\",\n  \"is_active\": true\n}",
+      "headers": "Accept: application/json\nContent-Type: application/json\nX-Auth-Token: {{X-Auth-Token}}\nX-Auth-Client: {{X-Auth-Client}}\n",
+      "pathVariables": []
+    },
+    {
+      "id": "66ee7dd6-84e3-48af-95b8-a09b127ab70e",
+      "name": "Update a Product",
+      "url": "https://api.bigcommerce.com/stores/eicnh3gu8w/v3/catalog/products/{{product_id}}",
+      "description": "",
+      "data": [],
+      "dataMode": "raw",
+      "headerData": [
+        {
+          "key": "X-Auth-Client",
+          "value": "{{client_id}}",
+          "description": "",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "X-Auth-Token",
+          "value": "{{client_secret}}",
+          "description": "",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "description": "",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "description": "",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "method": "PUT",
+      "pathVariableData": [],
+      "queryParams": [],
+      "auth": null,
+      "events": [],
+      "folder": null,
+      "currentHelper": null,
+      "helperAttributes": null,
+      "collectionId": "23f3b5fa-bf21-4002-b297-15e45706bff4",
+      "rawModeData": "{\n  \"price\": 12.99\n}",
+      "headers": "X-Auth-Client: {{client_id}}\nX-Auth-Token: {{client_secret}}\nAccept: application/json\nContent-Type: application/json\n",
+      "pathVariables": []
+    },
+    {
+      "id": "ce7b0c22-feb4-49ec-ac49-584190a8cc77",
+      "name": "Delete a Webhook",
+      "url": "https://api.bigcommerce.com/stores/eicnh3gu8w/v2/hooks/{{hook_id}}",
+      "description": "",
+      "data": null,
+      "dataMode": null,
+      "headerData": [
+        {
+          "key": "X-Auth-Client",
+          "value": "{{client_id}}",
+          "description": "",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "X-Auth-Token",
+          "value": "{{client_secret}}",
+          "description": "",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "Accept",
+          "value": "application/json",
+          "description": "",
+          "type": "text",
+          "enabled": true
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/json",
+          "description": "",
+          "type": "text",
+          "enabled": true
+        }
+      ],
+      "method": "DELETE",
+      "pathVariableData": [],
+      "queryParams": [],
+      "auth": null,
+      "events": [],
+      "folder": null,
+      "currentHelper": null,
+      "helperAttributes": null,
+      "collectionId": "23f3b5fa-bf21-4002-b297-15e45706bff4",
+      "headers": "X-Auth-Client: {{client_id}}\nX-Auth-Token: {{client_secret}}\nAccept: application/json\nContent-Type: application/json\n",
+      "pathVariables": []
+    }
+  ]
+}

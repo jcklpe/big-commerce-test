@@ -1,0 +1,21 @@
+
+#downloadshelf{display:block;font-family:Arial;width:100%;height:48px;background-color:#f2f2f2;border-top:1px solid #d6d6d6;position:fixed;bottom:0;z-index:99999999999999999;margin:0;padding:0;float:left;}
+#downloadmenu{width: 300px;height: auto;background-color: #ffffff;display: none;position: fixed;bottom: 53px;left: 10px;border: 1px solid #bababa;box-shadow:3px 3px 2px 0px rgba(0,0,0,0.2);}
+.downloadmenuitem{box-sizing: content-box;display: block;font-size: 12px;font-family: Arial;padding: 8px 8px 8px 32px;border-bottom: 1px solid #e9e9e9;height: 13px;}
+.downloadmenuitem:hover{background-color:#ebebeb;}
+.downloaditem{display:block;font-family:Arial;width:200px;height:48px;text-align:center;border-right:1px solid #dfdfdf;float:left;font-size:13px !important;}
+.downloaditem:hover{background-color:#ebebeb;}
+#downloadmenuitemopen{border-bottom:none;}
+.downloaditem.iconhover{background-color:#efefef !important;}
+.downloaditemcanvas{background-repeat:no-repeat;background-position:center center;background-size:24px 24px;background-color:transparent;margin:12px;float:left;}
+.downloadmenuexpandicon{display:block;font-family:Arial;float:left;margin:16px 8px;vertical-align: middle;width:16px;height:16px;position:static;}
+.downloadmenuexpandicon:hover{background-color: #dfdfdf;}
+.downloadfilecontainer{box-sizing: content-box;width:111px;overflow:hidden;text-overflow:ellipsis;display: block;float:left;height:16px;margin:16px 0;font-family:Arial;white-space: nowrap;}
+.downloadprogress{display:block;font-family:Arial;font-size:9px;}
+.downloadfile{display:block;font-family:Arial;overflow:hidden;text-overflow: ellipsis;color:#0c0c0c;line-height: 16px;} 
+.inprogress .downloadfilecontainer{height: 28px;margin-top: 10px;margin-bottom: 10px;}
+.downloadshieldcloseicon{display:block;float:right;margin:16px 8px 16px 0px;vertical-align: middle;width:16px;height:16px;}
+.downloadshieldcloseicon:hover{background-color:#dfdfdf;}
+.downloadshieldshowall{display:block;font-family:Arial;float:right;margin:12px;height:auto;border:1px solid gray;font-size:12px;text-align:center;padding:4px 8px;background-color:#f9f9f9;}
+#downloadmenuitemcancel{border-bottom:none;}
+#downloadmenuitemalways{background-repeat: no-repeat;background-position: 8px 8px;background-size: 18px;}
